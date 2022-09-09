@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  min-width: 20rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 0.675rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 1px solid #d0d0d0;
 `;
 
@@ -29,6 +29,20 @@ export const ProductImage = styled.img`
   height: 8rem;
   border-radius: 50%;
   background-color: #f5f5f5;
+`;
+
+export const ProductPrice = styled.p`
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d1e1f;
+`;
+
+export const IsStocked = styled.span`
+  display: inline-block;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
 `;
 
 export const ActionBar = styled.div`
