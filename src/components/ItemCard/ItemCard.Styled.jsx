@@ -7,7 +7,7 @@ export const Card = styled.div`
   align-items: center;
   border-radius: 0.675rem;
   padding: 0.5rem;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #f2f2f2;
 `;
 
 export const CardMetadata = styled.span`
@@ -37,9 +37,10 @@ export const ProductPrice = styled.p`
   color: #1d1e1f;
 `;
 
-export const IsStocked = styled.span`
+export const Stocked = styled.span`
   display: inline-block;
-  background: #f5f5f5;
+  background: ${(props) => (props.isStocked ? "#e5fff1" : "#fff1f5")};
+  color: ${(props) => (props.isStocked ? "#00d563" : "#f02052")};
   border-radius: 4px;
   padding: 0.5rem;
   margin-bottom: 2rem;

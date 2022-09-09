@@ -6,33 +6,35 @@ import {
   ProductImage,
   ActionBar,
   ProductPrice,
-  IsStocked,
+  Stocked,
 } from "./ItemCard.Styled";
 import Button from "../Button";
 
 // Data Imports
 import ProductsData from "../../data/products.json";
 
-export default function ItemCard({ category, price, stocked, name }) {
+export default function ItemCard() {
   const handleClick = () => {
     alert("Clicked Button");
   };
 
   return (
     <>
-      {ProductsData.map((product) => {
+      {ProductsData.map((product, index) => {
         return (
           <Card>
             <CardMetadata>{product.category}</CardMetadata>
             <ProductName>{product.name}</ProductName>
-            <IsStocked>
+            <Stocked isStocked={product.stocked ? true : false}>
               {product.stocked ? "In Stock" : "Out of Stock"}
-            </IsStocked>
+            </Stocked>
             <ProductImage />
             <ProductPrice>{product.price}</ProductPrice>
             <ActionBar>
-              <Button primary title="Buy Now" onClick={handleClick} />
-              <Button title="Add to cart" />
+              <Button primary onClick={handleClick}>
+                Buy Now
+              </Button>
+              <Button>Add to cart</Button>
             </ActionBar>
           </Card>
         );
