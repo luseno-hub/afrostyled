@@ -22,7 +22,7 @@ export default function ItemCard() {
     <>
       {ProductsData.map((product, index) => {
         return (
-          <Card>
+          <Card key={index}>
             <CardMetadata>{product.category}</CardMetadata>
             <ProductName>{product.name}</ProductName>
             <Stocked isStocked={product.stocked ? true : false}>
