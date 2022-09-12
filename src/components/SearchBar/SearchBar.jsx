@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Input } from "./SearchBar.Styled";
 
 export default function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState("");
+  console.log(searchTerm);
+
   return (
-    <input
+    <Input
       placeholder="Search Movies"
-      value=""
+      value={searchTerm}
       onChange={(e) => {
-        e.target.value;
+        setSearchTerm(e.target.value);
       }}
     />
   );

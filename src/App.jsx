@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ItemCard from "./components/ItemCard";
 import MovieCard from "./components/MovieCard";
+import SearchBar from "./components/SearchBar";
 
 // Global Imports
 import {
@@ -15,6 +16,7 @@ function App() {
         <ItemCard />
       </FlexItems>
       <FlexItems>
+        <SearchBar />
         <MovieCard />
       </FlexItems>
     </ContainerFluid>
