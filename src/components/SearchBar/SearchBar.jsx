@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Input } from "./SearchBar.Styled";
 
-export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
-  console.log(searchTerm);
-
+export default function SearchBar({ placeholder, value, onChange }) {
   return (
-    <Input
-      placeholder="Search Movies"
-      value={searchTerm}
-      onChange={(e) => {
-        setSearchTerm(e.target.value);
-      }}
-    />
+    <>
+      <Input placeholder={placeholder} value={value} onChange={onChange} />
+    </>
   );
 }
