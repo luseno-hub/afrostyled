@@ -4,6 +4,8 @@ import ItemCard from "./components/ItemCard";
 import SearchBar from "./components/SearchBar";
 import TestCard from "./components/TestCard";
 
+import FilterableProductTable from "./components/FilterableProductTable";
+
 // Global Imports
 import {
   ContainerFluid,
@@ -11,6 +13,15 @@ import {
 } from "./components/ContainerMain/ContainerMain.Styled";
 // Data Imports
 import { API_URL } from "../src/utils/constants";
+
+const PRODUCTS = [
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
+  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
+  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
+];
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -29,6 +40,10 @@ function App() {
 
   return (
     <ContainerFluid>
+      <FlexItems>
+        <FilterableProductTable products={PRODUCTS} />
+      </FlexItems>
+
       <SearchBar
         placeholder="Search Movies"
         value={searchTerm}
